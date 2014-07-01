@@ -1,0 +1,30 @@
+{
+  "name": "susy",
+  "repo": "harp/susy",
+  "description": "For Harp. Responsive layout toolkit for Sass.",
+  "version": "1.0.9",
+  "keywords": [
+    "harp",
+    "scss",
+    "sass",
+    "susy"
+  ],
+  "dependencies": {
+    "harp/compass": "*"
+  },
+  "development": {},
+  "license": "",
+  "files": [
+    "scss/_susy.scss",
+    "scss/susy/_background.scss",
+    "scss/susy/_functions.scss",
+    "scss/susy/_grid.scss",
+    "scss/susy/_isolation.scss",
+    "scss/susy/_margin.scss",
+    "scss/susy/_media.scss",
+    "scss/susy/_padding.scss",
+    "scss/susy/_settings.scss",
+    "scss/susy/_support.scss",
+    "scss/susy/_units.scss"
+  ]
+}

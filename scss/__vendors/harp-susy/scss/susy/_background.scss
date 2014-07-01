@@ -1,0 +1,46 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "../../../harp-compass/scss/layout/grid-background";
+@import "../../../harp-compass/scss/css3/background-origin";
+@import "../../../harp-compass/scss/css3/background-clip";
+
+// ---------------------------------------------------------------------------
+// Susy Grid Background
+//
+// A wrapper for the compass "column-grid-background" mixin
+// Uses all your settings to create a grid background for a container element.
+// Note: Sub-pixel rounding can lead to several pixels of variation between browsers.
+@mixin susy-grid-background(){
+
+    // http://www.soholaunch.com/Blog.php?id=62
+
+    $baseline: 8px;
+    $gutters: ($total-columns - 1);
+    $column-color: rgba(200,0,0,.2);
+    $baseline-color: rgba(56,255,255,.8);
+    $baseline-color-2: rgba(130,10,5,.1);
+
+    $original-gutter-width:  gutter();
+    $original-column-width: column();
+
+    $gradient-gutter-width: ($original-gutter-width / $original-column-width) * 100;
+    $gradient-column-width: (100 - $gradient-gutter-width) *1%;
+    $gradient-gutter-width: $gradient-gutter-width * 1% ;
+
+    background-image: -webkit-linear-gradient(0deg, $column-color $gradient-column-width, transparent $gradient-gutter-width),
+                            -webkit-linear-gradient(top, rgba(0,0,0,0) 90%, $baseline-color 100%),
+                            -webkit-linear-gradient(top, rgba(0,0,0,0) 90%, $baseline-color-2 100%);
+    background-image: -moz-linear-gradient(0deg, $column-color $gradient-column-width, transparent $gradient-gutter-width),
+                            -moz-linear-gradient(top, rgba(0,0,0,0) 90%, $baseline-color 100%),
+                            -moz-linear-gradient(top, rgba(0,0,0,0) 90%, $baseline-color-2 100%);
+    background-image: -o-linear-gradient(0deg, $column-color $gradient-column-width, transparent $gradient-gutter-width),
+                            -o-linear-gradient(top, rgba(0,0,0,0) 90%, $baseline-color 100%),
+                            -o-linear-gradient(top, rgba(0,0,0,0) 90%, $baseline-color-2 100%);
+    background-size: ($original-column-width + $original-gutter-width + ($original-gutter-width / $gutters)) 100%, 100% $baseline, 100% $baseline * 2;
+
+
+  // @include column-grid-background($total-columns, column(), gutter(), 0);
+  @include background-origin(content-box);
+  @include background-clip(content-box);
+}
