@@ -1,8 +1,10 @@
 susyone-libsass
 ===============
 
-Based on modules from https://github.com/harp. Most of the work has been done by them.
+Credits:
 
+Based on modules from **https://github.com/harp**. Most of the work has been done by them.
+The original susy which is really great but lacks libsass support: **https://github.com/ericam/susy**
 
 
 ## Why?
